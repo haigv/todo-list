@@ -1,0 +1,101 @@
+$sizes: 12;
+
+@mixin margin-classes {
+  @for $i from 0 through $sizes {
+    $margin: $i * 0.25rem !important;
+    .m#{$i} {
+      margin: $margin;
+    }
+    .ml#{$i} {
+      margin-left: $margin;
+    }
+    .mr#{$i} {
+      margin-right: $margin;
+    }
+    .mt#{$i} {
+      margin-top: $margin;
+    }
+    .mb#{$i} {
+      margin-bottom: $margin;
+    }
+    .mx#{$i} {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+    .my#{$i} {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+}
+@include margin-classes;
+
+@mixin padding-classes {
+  @for $i from 0 through $sizes {
+    $padding: $i * 0.25rem !important;
+    .p#{$i} {
+      padding: $padding;
+    }
+    .pl#{$i} {
+      padding-left: $padding;
+    }
+    .pr#{$i} {
+      padding-right: $padding;
+    }
+    .pt#{$i} {
+      padding-top: $padding;
+    }
+    .pb#{$i} {
+      padding-bottom: $padding;
+    }
+    .px#{$i} {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+    .py#{$i} {
+      padding-top: $padding;
+      padding-bottom: $padding;
+    }
+  }
+}
+@include padding-classes;
+
+$col: 24;
+
+@mixin width-range-class {
+  @for $i from 1 through $col {
+    $col: ($i/24) * 100% !important;
+    .w-#{$i}-of-24 {
+      width: $col;
+    }
+  }
+}
+@include width-range-class;
+
+@mixin margin-range-classes {
+  @for $i from 1 through $col {
+    $col: ($i/24) * 100% !important;
+    .ml-#{$i}-of-24 {
+      margin-left: $col;
+    }
+    .mr-#{$i}-of-24 {
+      margin-right: $col;
+    }
+  }
+}
+@include margin-range-classes;
+
+.d-flex {
+  display: flex;
+}
+
+.validation-text {
+  color: #ff0000;
+  font-size: 12px;
+  position: absolute;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
